@@ -5,19 +5,8 @@ export default function Hero() {
       <div className={style.hero}>
         <h1> Upload & <br />  <span>Print</span> </h1>
 
-        <span>India&apos;  s First Online Print On Demand Service</span> <br />
-        {/* <div className={style.buttons}>
-          <div className={style.upload}>
-          <i class="ri-upload-cloud-2-fill"></i>
-            Upload
-          </div>
-          <i class="ri-arrow-right-line"></i>
-          <button>
-          <i class="ri-printer-fill"></i>
-            Print
-            </button>
-            <i class="ri-check-double-line"></i>
-        </div> */}
+        <span>India&apos;s First Online Print On Demand Service</span> <br />
+        
       </div>
     </div>
   )
