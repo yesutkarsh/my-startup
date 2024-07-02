@@ -1,4 +1,3 @@
-import React from 'react'
 import style from "../../../css/home.module.css"
 export default function Hero() {
   return (
