@@ -1,7 +1,7 @@
 "use client"
 import React, { useCallback } from 'react';
 import style from "./ContinueWithGoogle.module.css";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, getRedirectResult, signInWithRedirect } from "firebase/auth";
 import { auth } from '@/utils/firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '@/utils/slices/userSlice';
@@ -11,9 +11,13 @@ export default function ContinueWithGoogle() {
   const user = useSelector(store => store?.user)
   // console.log(user.photoURL)
   const signUp = useCallback(async () => {
+    const provider = new GoogleAuthProvider()
     try {
-      const userCred = await signInWithPopup(auth, new GoogleAuthProvider());
-      dispatch(addUser(userCred.user));
+      signInWithRedirect(auth, provider);
+      const userCred = await getRedirectResult(auth);
+      // const userCred = await signInWithPopup(auth, new GoogleAuthProvider());
+      // dispatch(addUser(userCred.user));
+      console.log("Clicked")
     } catch (error) {
       console.error("Error during sign up with Google:", error);
     }
