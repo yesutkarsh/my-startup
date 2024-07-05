@@ -1,5 +1,5 @@
 "use client"
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import style from "./ContinueWithGoogle.module.css";
 import { signInWithPopup, GoogleAuthProvider, getRedirectResult, signInWithRedirect } from "firebase/auth";
 import { auth } from '@/utils/firebase';
@@ -7,16 +7,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '@/utils/slices/userSlice';
 
 
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 
 export default function ContinueWithGoogle() {
   const dispatch = useDispatch();
   const user = useSelector(store => store?.user)
 
   // console.log(user.photoURL)
+const [isMobile, setIsMobile] = useState(false)
   
   
   
+
   
   const signUp = useCallback(async () => {
     const provider = new GoogleAuthProvider()
@@ -45,7 +47,11 @@ export default function ContinueWithGoogle() {
     }
     
   }, [dispatch]);
-
+  
+  useEffect(()=>{
+    const mobileCheck = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    setIsMobile(mobileCheck);
+  },[])
   return (
     <div className={style.wrapper}>
       {!user?
