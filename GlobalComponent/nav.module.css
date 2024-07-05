@@ -1,0 +1,35 @@
+.Navagation{
+    z-index: 999;
+    height: 70px;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 1px 1px 100px 1px rgba(0, 0, 0, 0.137);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+    margin-top: 50px;
+    border-radius: 22px;
+}
+.navBar h1{
+    font-size: 25px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Navagation i{
+    font-size: 30px;
+}
+.section1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.section1 i{
+    font-size: 25px;
+    color: rgb(49, 49, 49);
+}

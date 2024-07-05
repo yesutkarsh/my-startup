@@ -31,14 +31,14 @@ export default function Services() {
         <div className={style.service}>
         
             <div className={style.Info}>
-                School Project File Print
+                A4 COLOR | B&W PRINT starting from Rs. 1
             </div>
 
 
             <div className={style.card}>
                 <div>
-                <span className='font-extrabold text-3xl'>SCHOOL</span> <br />
-                <span className='font-bold text-gray-700'>PROJECT FILE</span>
+                <span className='font-extrabold text-3xl'>A4 PRINT</span> <br />
+                <span className='font-bold text-gray-700'>@ 1Rs</span>
 
                 </div>
             </div>

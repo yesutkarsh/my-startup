@@ -1,10 +1,11 @@
 "use client";
 import React, { useCallback, useEffect, useState } from 'react';
 import style from "./ContinueWithGoogle.module.css";
-import { signInWithPopup, GoogleAuthProvider, getRedirectResult, signInWithRedirect } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, getRedirectResult, signInWithRedirect, signOut } from "firebase/auth";
 import { auth } from '@/utils/firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '@/utils/slices/userSlice';
+import ContinueWithEmail from './ContinueWithEmail/ContinueWithEmail';
 
 export default function ContinueWithGoogle() {
   const dispatch = useDispatch();
@@ -12,20 +13,40 @@ export default function ContinueWithGoogle() {
 
   const [isMobile, setIsMobile] = useState(false);
 
+
+
+// Emial Signup button toggle
+  const [emailSignup, settoggleEmailSinup] = useState(false)
+
+  function toogleEmailSignup(){
+    settoggleEmailSinup(!emailSignup)
+  }
+
+// Signout
+const signOutNow = ()=>{
+  signOut(auth).then(() => {
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
+}
+
+
   const signUp = useCallback(async () => {
     const provider = new GoogleAuthProvider();
     try {
       if (isMobile) {
-        await signInWithRedirect(auth, provider);
-        const userCred = await getRedirectResult(auth);
+        signInWithRedirect(auth, provider);
+        const userCred = getRedirectResult(auth);
         if (userCred) {
           dispatch(addUser(userCred.user));
+
         }
       } else {
         const userCred = await signInWithPopup(auth, provider);
         dispatch(addUser(userCred.user));
       }
-      console.log("Clicked");
+      // console.log("Clicked");
     } catch (error) {
       console.error("Error during sign up with Google:", error);
     }
@@ -40,6 +61,9 @@ export default function ContinueWithGoogle() {
   }, []);
 
   return (
+    <>
+    {emailSignup? <ContinueWithEmail/> : null}
+
     <div className={style.wrapper}>
       {!user ? (
         <>
@@ -47,12 +71,21 @@ export default function ContinueWithGoogle() {
             <i className="ri-google-fill"></i>
             Continue With Google
           </button>
+          <br />
+          <button onClick={toogleEmailSignup}>
+          <i class="ri-mail-lock-fill"></i>
+            Continue With Email
+          </button>
           <p>We value your privacy. By signing in with Google, you agree to our Policies.</p>
           <p className='underline'>Continue Without Sign In</p>
         </>
       ) : (
+<>
         <p>You Are Already Signed In</p>
+        <button onClick={signOutNow}>Sign Out</button>
+</>
       )}
     </div>
+      </>
   );
 }

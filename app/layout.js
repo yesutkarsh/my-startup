@@ -1,9 +1,10 @@
 "use client"
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/GlobalComponent/Navbar";
 import { Provider } from "react-redux";
 import store from "@/utils/store";
+import AuthChange from "./AuthChange";
+import NavBar from "@/GlobalComponent/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +13,6 @@ export default function RootLayout({ children }) {
   
   return (
     <Provider store={store}>
-
     <html lang="en">
       <head>
 
@@ -29,8 +29,8 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={inter.className}>
-
-        <NavBar />
+      <AuthChange/>
+      <NavBar/>
         {
           children
         }

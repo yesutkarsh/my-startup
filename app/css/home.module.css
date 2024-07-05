@@ -1,6 +1,6 @@
 /* Hero css */
 .wrapper{
-    /* position: fixed; */
+    position: fixed;
     z-index: -10;
 }
 .hero{
