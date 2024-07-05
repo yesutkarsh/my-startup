@@ -4,7 +4,7 @@ import "./globals.css";
 import { Provider } from "react-redux";
 import store from "@/utils/store";
 import AuthChange from "./AuthChange";
-import NavBar from "@/GlobalComponent/NavBar";
+import NavBar from "../GlobalComponent/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
