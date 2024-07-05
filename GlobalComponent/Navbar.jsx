@@ -2,21 +2,10 @@
 import React, { useEffect, useState } from "react";
 import {
   Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-  Link,
-  Button,
 } from "@nextui-org/react";
 import style from "./nav.module.css";
 import ContinueWithGoogle from "./ContinueWithGoogle";
-import { useDispatch, useSelector } from "react-redux";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/utils/firebase";
-import { addUser, removeUser } from "@/utils/slices/userSlice";
+import {useSelector } from "react-redux";
 export default function NavBar() {
   const user = useSelector((store) => store?.user);
   // console.log(user.photoURL)
