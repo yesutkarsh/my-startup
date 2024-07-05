@@ -6,21 +6,44 @@ import { auth } from '@/utils/firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '@/utils/slices/userSlice';
 
+
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 export default function ContinueWithGoogle() {
   const dispatch = useDispatch();
   const user = useSelector(store => store?.user)
+
   // console.log(user.photoURL)
+  
+  
+  
+  
   const signUp = useCallback(async () => {
     const provider = new GoogleAuthProvider()
-    try {
-      signInWithRedirect(auth, provider);
-      const userCred = await getRedirectResult(auth);
-      // const userCred = await signInWithPopup(auth, new GoogleAuthProvider());
-      // dispatch(addUser(userCred.user));
-      console.log("Clicked")
-    } catch (error) {
-      console.error("Error during sign up with Google:", error);
+    if (isMobile) {
+      // Redirect or use popup method for mobile devices
+      try {
+        signInWithRedirect(auth, provider);
+        const userCred = await getRedirectResult(auth);
+        // const userCred = await signInWithPopup(auth, new GoogleAuthProvider());
+        // dispatch(addUser(userCred.user));
+        console.log("Clicked")
+      } catch (error) {
+        console.error("Error during sign up with Google:", error);
+      }
+    } else {
+      // Use popup method or redirect for desktop devices
+      try {
+        // signInWithRedirect(auth, provider);
+        // const userCred = await getRedirectResult(auth);
+        const userCred = await signInWithPopup(auth, new GoogleAuthProvider());
+        dispatch(addUser(userCred.user));
+        console.log("Clicked")
+      } catch (error) {
+        console.error("Error during sign up with Google:", error);
+      }
     }
+    
   }, [dispatch]);
 
   return (
