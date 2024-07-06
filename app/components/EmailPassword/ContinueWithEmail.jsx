@@ -1,10 +1,9 @@
 import React, { useRef, useState } from 'react'
 import style from "./email.module.css"
+import { useDispatch } from 'react-redux'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '@/utils/firebase'
 
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '@/utils/firebase';
-import { addUser } from '@/utils/slices/userSlice';
-import { useDispatch } from 'react-redux';
 
 
 export default function ContinueWithEmail() {

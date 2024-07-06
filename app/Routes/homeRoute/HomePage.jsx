@@ -1,4 +1,3 @@
-import ContinueWithGoogle from "@/GlobalComponent/ContinueWithGoogle"
 import style from "../../css/home.module.css"
 import Hero from "./Components/Hero"
 import Services from "./Components/Services"

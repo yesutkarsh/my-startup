@@ -1,13 +1,11 @@
 "use client";
 import React, { useCallback, useEffect, useState } from 'react';
-import style from "./ContinueWithGoogle.module.css";
-import { signInWithPopup, GoogleAuthProvider, getRedirectResult, signInWithRedirect, signOut } from "firebase/auth";
-import { auth } from '@/utils/firebase';
+import style from "./SignupCard.module.css"
+import { GoogleAuthProvider, signInWithPopup, signInWithRedirect, signOut } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser } from '@/utils/slices/userSlice';
-import ContinueWithEmail from './ContinueWithEmail/ContinueWithEmail';
-
-export default function ContinueWithGoogle() {
+import { auth } from '@/utils/firebase';
+import ContinueWithEmail from '../EmailPassword/ContinueWithEmail';
+export default function SignUpCard() {
   const dispatch = useDispatch();
   const user = useSelector(store => store?.user);
 
