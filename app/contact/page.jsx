@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react"
 
 export default function page() {
   return (
     <>
-    <div className='mt-[100px] m-5 p-10 bg-white rounded-[22px]'>
+    <div className="mt-[100px] m-5 p-10 bg-white rounded-[22px]">
     <h1>Contact and Return</h1> <br />
     <p style={{color:"grey"}}>Due to the personalized nature of our products, we do not accept returns. Each note, book, and print order is customized specifically for you, which makes it impossible to restock or resell these items. However, we are committed to ensuring your complete satisfaction with our services.</p>
     <br />

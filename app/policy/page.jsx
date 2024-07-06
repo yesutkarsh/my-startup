@@ -7,8 +7,8 @@ export default function page() {
         <h1>PRIVACY NOTICE</h1> <br />
         <p style={{ color: "grey" }}>
           This privacy notice for our website, describes now and why we might
-          collect, store, use, and/or share ("process") your information when
-          you use our services ("Services"), such as when you:
+          collect, store, use, and/or share (process) your information when
+          you use our services (Services), such as when you:
         </p>
         <br />
         <p style={{ color: "grey" }}>
