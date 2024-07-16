@@ -5,13 +5,19 @@ import { GoogleAuthProvider, signInWithPopup, signInWithRedirect, signOut } from
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '@/utils/firebase';
 import ContinueWithEmail from '../EmailPassword/ContinueWithEmail';
+import { motion } from 'framer-motion';
+import { toggleSignup } from '@/utils/slices/navSlice';
 export default function SignUpCard() {
   const dispatch = useDispatch();
   const user = useSelector(store => store?.user);
 
+  const stateOfSingup = useSelector((store) => store?.navbar?.signup);
+
   const [isMobile, setIsMobile] = useState(false);
 
-
+  const toggleSingup = ()=>{
+    dispatch(toggleSignup())
+  }
 
 // Emial Signup button toggle
   const [emailSignup, settoggleEmailSinup] = useState(false)
@@ -52,19 +58,22 @@ const signOutNow = ()=>{
 
   useEffect(() => {
     const userAgent = navigator.userAgent;
-    console.log('User Agent:', userAgent);  // Log the user agent to debug
+    // console.log('User Agent:', userAgent);  // Log the user agent to debug
     const mobileCheck = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
     setIsMobile(mobileCheck);
-    console.log("Currently isMobile =", mobileCheck);
+    // console.log("Currently isMobile =", mobileCheck);
   }, []);
 
   return (
     <>
     {emailSignup? <ContinueWithEmail/> : null}
 
-    <div className={style.wrapper}>
+    <motion.div initial={{bottom:-100,opacity:0}} animate={{bottom:0,opacity:1}} className={style.wrapper}>
       {!user ? (
         <>
+        <div onClick={toggleSingup} className={style.navinnav}>
+          Close <i class="ri-close-circle-fill"></i>
+        </div>
           <button onClick={signUp}>
             <i className="ri-google-fill"></i>
             Continue With Google
@@ -75,7 +84,7 @@ const signOutNow = ()=>{
             Continue With Email
           </button>
           <p>We value your privacy. By signing in with Google, you agree to our Policies.</p>
-          <p className='underline'>Continue Without Sign In</p>
+          <p  onClick={toggleSingup}  className='underline'>Continue Without Sign In</p>
         </>
       ) : (
 <>
@@ -83,7 +92,7 @@ const signOutNow = ()=>{
         <button onClick={signOutNow}>Sign Out</button>
 </>
       )}
-    </div>
+    </motion.div>
       </>
   );
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="upload">
+      <form class="form">
+        <span class="form-title">Upload your PDF</span>
+
+        <label for="file-input" class="drop-container">
+          <input type="file" accept=".pdf" required="" id="file-input" />
+        </label>
+      </form>
+      <div class="options">
+        <select>
+          <option>Color</option>
+          <option>Black & White</option>
+        </select>
+
+        <select>
+          <option>A4</option>
+          <option>A5</option>
+          <option>B5</option>
+        </select>
+
+        <select>
+          <option>Single Side</option>
+          <option>Double Side</option>
+        </select>
+        <label>
+          Select Binding Carefully
+          <select>
+            <option>Normal Print</option>
+            <option>Notes To Book</option>
+            <option>Spiral</option>
+            <option>Hard Cover</option>
+            <option>Soft Cover</option>
+          </select>
+        </label>
+        <label>
+            Delivery Fee
+            <select>
+              <option>Normal 45</option>
+              <option>Super Fast 70</option>
+            </select>
+          </label>
+      </div>
+      <div class="price">
+          <span>Calculate Price</span>
+        <span>₹ 0</span>
+        <button>PAY & ORDER</button>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,6 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getStorage, ref, getMetadata } from "firebase/storage";
+
+
 const cors = require('cors')({ origin: true });
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,3 +26,4 @@ const app = initializeApp(firebaseConfig);
 
 
 export const auth = getAuth()
+export const storage = getStorage();

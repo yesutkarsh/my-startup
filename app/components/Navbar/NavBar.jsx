@@ -4,29 +4,55 @@ import {
   Navbar,
 } from "@nextui-org/react";
 import style from "./nav.module.css"
-import {useSelector } from "react-redux";
+import {useDispatch, useSelector } from "react-redux";
 import SignUpCard from "../SignupCard/SignupCard";
+import Menu from "./Menu";
+import { toggleNav,toggleSignup } from "@/utils/slices/navSlice";
+import Link from "next/link";
 
 
 export default function NavBar() {
-  const user = useSelector((store) => store?.user);
-  const [toggleSinup, settoggleSinup] = useState(false);
+
+  const navbar = useSelector((store) => store?.navbar?.navbar);
+  const stateOfSingup = useSelector((store) => store?.navbar?.signup);
+
+
+
+
+  console.log(navbar)
+
+
+  const dispatch = useDispatch()
+
+  const toggleMenu = ()=>{
+    dispatch(toggleNav())
+  }
+  
+
+
+
+  
   function toggleIt() {
-    settoggleSinup(!toggleSinup);
+  dispatch(toggleSignup())
   }
 
   return (
     <>
-      <Navbar >
+    {navbar? <Menu/> : null}
+      <Navbar>
         <div className={style.Navagation}>
           <div className={style.section1}>
-          <i class="ri-menu-2-line"></i>
+          <i onClick={toggleMenu} class="ri-menu-2-line"></i>
+          <Link href={"/"}>
           <h1>Notes Wallah</h1>
+          </Link>
           </div>
           <i onClick={toggleIt} class="ri-user-smile-fill"></i>
+          
         </div>
+      
       </Navbar>
-      {toggleSinup ? <SignUpCard/> : null}
+      {stateOfSingup ? <SignUpCard/> : null}
     </>
   );
 }

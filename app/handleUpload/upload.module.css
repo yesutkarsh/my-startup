@@ -1,0 +1,136 @@
+
+
+.upload{
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 10px 10px 100px 10px rgba(40, 177, 170, 0.096);
+}
+
+
+
+.form {
+    background-color: #fff;
+    border: 1px solid rgba(159, 159, 160, 0.301);
+    border-radius: 20px;
+    padding: 2rem .7rem .7rem .7rem;
+    text-align: center;
+    font-size: 1.125rem;
+    max-width: 320px;
+  }
+  
+  .formtitle {
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  
+  .formparagraph {
+    margin-top: 10px;
+    font-size: 0.9375rem;
+    color: rgb(105, 105, 105);
+  }
+  
+  .dropcontainer {
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 2.1875rem;
+    border-radius: 10px;
+    border: 2px dashed rgb(171, 202, 255);
+    color: #444;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+  }
+  
+  .dropcontainer:hover {
+    background: rgba(255, 255, 255, 0.959);
+    border-color: rgba(17, 17, 17, 0.952);
+  }
+  
+  .dropcontainer:hover .drop-title {
+    color: #222;
+  }
+  
+  .droptitle {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+  }
+  
+  #fileinput {
+    width: 350px;
+    max-width: 100%;
+    color: #444;
+    padding: 2px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid rgba(8, 8, 8, 0.288);
+  }
+  
+  #fileinput::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  
+  #fileinput::file-selector-button:hover {
+    background: #0d45a5;
+  }
+
+
+
+  .options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.options select{
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    outline: none;
+}
+
+.price{
+  background-color: whitesmoke;
+  height: 100px;
+  width: 100%;
+  padding: 20px;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.price button{
+  border: 0.51PX solid rgba(0, 0, 0, 0.24);
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+}
+
