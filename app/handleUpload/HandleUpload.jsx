@@ -5,6 +5,7 @@ import style from "./upload.module.css";
 import { storage } from "@/utils/firebase";
 import { ref, uploadBytes } from "firebase/storage";
 import * as pdfjsLib from "pdfjs-dist/webpack";
+
 export default function HandleUpload() {
     const [pdf, setPdf] = useState("");
 
@@ -47,29 +48,28 @@ export default function HandleUpload() {
   
   
    
-    const pdfRecieved = async(file) =>{
-      if(file){
-        var reader = new FileReader();
-        reader.onload = async (e) => {
-          const pdfData = new Uint8Array(e.target.result);
-          const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
-          setNoOfPage(pdf.numPages);
-          
-        };
-      }try {
-        reader.readAsArrayBuffer(file);
-      } catch (err) {
-        console.log(err);
-      }
-     
+  const pdfRecieved = async (file) => {
+    if (file) {
+        try {
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                const pdfData = new Uint8Array(e.target.result);
+                const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
+                setNoOfPage(pdf.numPages);
+            };
+            reader.readAsArrayBuffer(file);
+        } catch (err) {
+            console.error("Error reading PDF file:", err);
+        }
     }
+};
    
   
   
-    const UploadPdf = () => {
-      const pdfRef = ref(storage, `files/${userEmail}`);
-      uploadBytes(pdfRef);
-    };
+    // const UploadPdf = () => {
+    //   const pdfRef = ref(storage, `files/${userEmail}`);
+    //   uploadBytes(pdfRef);
+    // };
   
   return (
     <>
