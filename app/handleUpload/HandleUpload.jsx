@@ -4,11 +4,11 @@ import { useState } from "react";
 import style from "./upload.module.css";
 import { storage } from "@/utils/firebase";
 import { ref, uploadBytes } from "firebase/storage";
-import * as pdfjsLib from "pdfjs-dist/webpack";
+// import * as pdfjsLib from "pdfjs-dist/webpack";
 
 import dynamic from 'next/dynamic';
 
-const PDFJS = dynamic(() => import('pdfjs-dist/webpack'), { ssr: false });
+const pdfjsLib = dynamic(() => import('pdfjs-dist/webpack'), { ssr: false });
 
 
 
