@@ -1,5 +1,11 @@
 "use client"
 import HandleUpload from "./HandleUpload";
+import dynamic from 'next/dynamic';
+
+const DynamicComponent = dynamic(() => import('./HandleUpload'), {
+  ssr: false
+});
+
 
 export default function page() {
 
@@ -7,8 +13,7 @@ export default function page() {
     <>
     
 
-<HandleUpload/>
-
+<DynamicComponent/>
 
     </>
 

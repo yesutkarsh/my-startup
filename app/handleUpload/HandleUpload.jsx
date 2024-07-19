@@ -6,6 +6,11 @@ import { storage } from "@/utils/firebase";
 import { ref, uploadBytes } from "firebase/storage";
 import * as pdfjsLib from "pdfjs-dist/webpack";
 
+
+ 
+
+
+
 export default function HandleUpload() {
     const [pdf, setPdf] = useState("");
 
