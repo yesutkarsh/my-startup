@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import store from "@/utils/store";
 import AuthChange from "./AuthChange";
 import NavBar from "./components/Navbar/NavBar";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,10 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <AuthChange/>
       <NavBar/>
+      <NextTopLoader
+      height={4}
+      color="black"
+       />
         {
           children
         }
