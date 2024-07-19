@@ -4,7 +4,7 @@ import { useState } from "react";
 import style from "./upload.module.css";
 import { storage } from "@/utils/firebase";
 import { ref, uploadBytes } from "firebase/storage";
-import {FileReader} from "pdfjs-dist/webpack";
+import * as pdfjsLib from "pdfjs-dist/webpack";
 
 export default function HandleUpload() {
     const [pdf, setPdf] = useState("");
@@ -31,6 +31,8 @@ export default function HandleUpload() {
   
   const calculatePrice = ()=>{
     base = color+paperSize+side
+    console.log("NO Of Page = " + noOfPage)
+
     console.log("Base = " + base)
     console.log("Chnage IN Paper Size = " + paperSize)
     setPrice(100*base)

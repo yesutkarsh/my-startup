@@ -12,6 +12,7 @@ import Link from "next/link";
 
 
 export default function NavBar() {
+  const dispatch = useDispatch()
 
   const navbar = useSelector((store) => store?.navbar?.navbar);
   const stateOfSingup = useSelector((store) => store?.navbar?.signup);
@@ -19,22 +20,19 @@ export default function NavBar() {
 
 
 
-  console.log(navbar)
-
-
-  const dispatch = useDispatch()
-
   const toggleMenu = ()=>{
     dispatch(toggleNav())
   }
-  
-
-
 
   
   function toggleIt() {
   dispatch(toggleSignup())
   }
+
+
+
+
+  
 
   return (
     <>
