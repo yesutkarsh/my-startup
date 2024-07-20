@@ -45,7 +45,10 @@ export default function NavBar() {
           <h1>Notes Wallah</h1>
           </Link>
           </div>
-          <i onClick={toggleIt} class="ri-user-smile-fill"></i>
+          <div onClick={toggleIt} className={style.account}>
+          <span>{!stateOfSingup? "Account": "Close"}</span>
+          <i  class="ri-user-smile-fill"></i>
+          </div>
           
         </div>
       

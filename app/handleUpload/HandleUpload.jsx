@@ -6,9 +6,7 @@ import { storage } from "@/utils/firebase";
 import { ref, uploadBytes } from "firebase/storage";
 import * as pdfjsLib from "pdfjs-dist/webpack";
 
-import dynamic from 'next/dynamic';
 
-// const pdfjsLib = dynamic(() => import('pdfjs-dist/webpack'), { ssr: false });
 
 
 

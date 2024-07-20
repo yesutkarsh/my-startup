@@ -8,6 +8,11 @@ export default function Hero() {
         <span>India First Online Print On Demand Service</span> 
         <br />
       </div>
+        <div className={style.print}>
+          <span>Pritn My Document</span>
+          <i class="ri-arrow-right-line"></i>
+
+        </div>
     </div>
   );
 }
