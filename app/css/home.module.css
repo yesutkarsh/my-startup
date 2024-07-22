@@ -1,13 +1,13 @@
 /* Hero css */
-.wrapper{
+/* .wrapper{
     position: fixed;
     z-index: -10;
-}
-.hero{
+} */
+/* .hero{
     width: 100%;
     height: 100%;
 
-}
+} */
 
 .hero h1{
     font-size: 70px;
@@ -19,57 +19,7 @@
 }
 
 
-.buttons{
-    display: flex;
-    background-color: rgb(245, 245, 245);
-    padding: 10px;
-    width: 100%;
-    max-width: 300px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 0.1px solid rgba(0, 0, 0, 0.096);
-}
-.upload{
-    background-color: rgba(0, 0, 0, 0.877);
-    color: white;
-    padding: 5px;
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    border-radius: 8px;
-    border: 0.1px solid rgb(0, 0, 0);
 
-}
-.upload:hover{
-    background-color: white;
-    color: black;
-    transition: 0.5s;
-    border: whitesmoke;
-    cursor: pointer;
-}
-.buttons button{
-    display: flex;
-    gap: 10px;
-    background-color: white;
-    padding: 5px;
-    width: 100px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    border: 0.1px solid rgba(0, 0, 0, 0.096);
-
-}
-.buttons button:hover{
-    background-color: rgb(94, 95, 93);
-    color: rgb(255, 255, 255);
-    transition: 0.5s;
-    border: rgb(0, 0, 0);
-    cursor: pointer;
-}
 
 
 .print{
@@ -88,7 +38,7 @@
 }
 
 /* Services */
-
+/* 
 .label{
     font-size: 30px;
     font-weight: 600;
@@ -101,14 +51,14 @@
 .services{
     overflow: auto;
     display: flex;
-    /* flex-wrap: wrap; */
     width: 100%;
     padding: 10px;
+    gap: 5px;
 }
 .services img{
-    margin: 10px;
+    margin-left: 20px;
     width: 200px;
     border-radius: 22px;
-    padding: 10px;
-    box-shadow: 1px 1px 100px 1px rgba(29, 219, 203, 0.082);
-}
+    background-color: rgba(255, 255, 255, 0);
+    border: 0.1px solid rgba(255, 255, 255, 0.062);
+} */

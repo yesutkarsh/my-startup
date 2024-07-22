@@ -11,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     list-style: none;
+    z-index: 999;
 }
 .menu ul{
     position: absolute;

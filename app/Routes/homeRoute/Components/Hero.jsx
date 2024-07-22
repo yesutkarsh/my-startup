@@ -1,3 +1,4 @@
+import Link from "next/link";
 import style from "../../../css/home.module.css";
 
 export default function Hero() {
@@ -8,11 +9,13 @@ export default function Hero() {
         <span>India First Online Print On Demand Service</span> 
         <br />
       </div>
-        <div className={style.print}>
-          <span>Pritn My Document</span>
-          <i class="ri-arrow-right-line"></i>
-
-        </div>
+        <Link href="/handleUpload">
+      <div className={style.print}>
+          <span>Print My Document</span>
+        <i className="ri-arrow-right-line"></i>
+      </div>
+        </Link>
     </div>
+
   );
 }
