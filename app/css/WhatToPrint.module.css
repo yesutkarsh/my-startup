@@ -1,0 +1,50 @@
+.main{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    backdrop-filter: blur(8px); /* Adjust blur level as needed */
+}
+.main img{
+    height: 120px;
+    width: 120px;
+    border-radius: 12px;
+}
+.wrapper{
+    margin: 20px;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 22px;
+    display: flex;
+    gap: 20px;
+    background-color: rgba(245, 245, 245, 0.623);
+    align-items: center;
+    /* justify-content: space-between; */
+    border: 0.1px solid rgba(0, 0, 0, 0.062);
+}
+.wrapper{
+    display: flex;
+}
+.wrapper span{
+    font-weight: 500;
+    font-size: 20PX;
+}
+.wrapper p{
+    color: gray;
+}
+.wrapper button{
+    margin-top: 10PX;
+    width: 100px;
+    border: none;
+    background-color: #0e4faf;
+    color: rgb(238, 238, 238);
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 12px;
+    padding: 10px;
+}
