@@ -24,7 +24,7 @@ export default function Menu() {
           <li onClick={toggleMenu}>Privacy Policy</li>
         </Link>
         <Link href="/contact">
-          <li onClick={toggleMenu}>Contact</li>
+          <li onClick={toggleMenu}>Contact & Refund</li>
         </Link>
       </ul>
     </motion.div>

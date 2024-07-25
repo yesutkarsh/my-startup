@@ -4,11 +4,17 @@ export default function page() {
   return (
     <>
       <div className="mt-[100px] m-5 p-10 bg-white rounded-[22px]">
-        <h1>PRIVACY NOTICE</h1> <br />
+        <h1>Privacy Policy</h1> <br />
         <p style={{ color: "grey" }}>
           This privacy notice for our website, describes now and why we might
-          collect, store, use, and/or share (process) your information when
-          you use our services (Services), such as when you:
+          collect, store, use, and/or share (process) your information when you
+          use our services (Services), such as when you:
+        </p>
+        <br />
+        <h1>Consent</h1>
+        <p style={{ color: "grey" }}>
+          By using our website, you hereby consent to our Privacy Policy and
+          agree to its terms.
         </p>
         <br />
         <p style={{ color: "grey" }}>
@@ -38,6 +44,14 @@ export default function page() {
           name and last name Phone number Address, State, Province, ZIP/Postal
           code, City Usage Data
         </p>
+
+        <br />
+        <h1>Changes to This Privacy Policy</h1>
+        <p style={{ color: "grey" }}>
+        We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page.
+        </p>
+        <br />
+
       </div>
     </>
   );
