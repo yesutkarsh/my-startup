@@ -38,7 +38,7 @@ export default function page() {
     <br />
 
     <h1> Confidentiality</h1>
-    <p style={{color:"grey"}} >Your files uploaded by you shall be deleted as soon as the printout is taken and shall not be shared with anyone or stored with printster under any circumstances. The Document remains the property of its copyright holder at all times. <br /> It is Your responsibility to ensure that You hold copyright, or have permission from the copyright holder, for the reproduction of all text, images, designs, and any other intellectual property contained in all Electronic Files uploaded to www.printster.in for printing and/or binding. <br /> We Don't Print Certificates / Mark-sheets Issued by any Government Authority or Any Other Institutions. If Still the Customer Places the order for the same, then we will print "COPY" or "DUPLICATE" on the same.</p>
+    <p style={{color:"grey"}} >Your files uploaded by you shall be deleted as soon as the printout is taken and shall not be shared with anyone or stored with printster under any circumstances. The Document remains the property of its copyright holder at all times. <br /> It is Your responsibility to ensure that You hold copyright, or have permission from the copyright holder, for the reproduction of all text, images, designs, and any other intellectual property contained in all Electronic Files uploaded to www.printster.in for printing and/or binding. <br /> We Do not Print Certificates / Mark-sheets Issued by any Government Authority or Any Other Institutions. If Still the Customer Places the order for the same, then we will print COPY or DUPLICATE on the same.</p>
     <br />
 
 
