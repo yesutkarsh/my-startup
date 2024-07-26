@@ -11,8 +11,7 @@ export default function HomePage() {
     <Hero/>
     </div>
     </div>
-    <div id={style.wrapperService} className="-mt-[50px] w-screen flex flex-col justify-center items-center bg-black rad " >
-      </div> 
+    
     </>
   )
 }

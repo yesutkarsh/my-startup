@@ -20,11 +20,17 @@ export default function Menu() {
         <Link href="/about">
           <li onClick={toggleMenu}>About</li>
         </Link>
+        <Link href="/pricing">
+          <li onClick={toggleMenu}>Pricing</li>
+        </Link>
         <Link href="/policy">
           <li onClick={toggleMenu}>Privacy Policy</li>
         </Link>
         <Link href="/contact">
           <li onClick={toggleMenu}>Contact & Refund</li>
+        </Link>
+        <Link href="/t&c">
+          <li onClick={toggleMenu}>Terms and Conditions</li>
         </Link>
       </ul>
     </motion.div>

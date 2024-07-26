@@ -13,6 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   
   return (
+
     <Provider store={store}>
     <html lang="en">
       <head>
@@ -20,7 +21,7 @@ export default function RootLayout({ children }) {
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
           rel="stylesheet"
-        />
+          />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +36,7 @@ export default function RootLayout({ children }) {
       <NextTopLoader
       height={4}
       color="black"
-       />
+      />
         {
           children
         }

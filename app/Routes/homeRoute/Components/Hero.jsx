@@ -12,6 +12,8 @@ export default function Hero() {
   }
   return (
     <>
+    <div className={style.container}>
+
     <div className={style.wrapper}>
       <div className={style.hero}>
         <h1>Upload & <br /> <span>Print</span></h1>
@@ -24,6 +26,16 @@ export default function Hero() {
       </div>
     </div>
 
+    <div className={style.services}>
+      <div>My Notes</div>
+      <div>Browse Notes</div>
+      <div>Upload Notes</div>
+      <p>All activity performed like Notes You Download | Upload | Like | Push | Pull Down are publically visible.</p>
+
+
+    </div>
+    
+    </div>
     {showCards?<WhatToPrint/>:null}
     
     </>
