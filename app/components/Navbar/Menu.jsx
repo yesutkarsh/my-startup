@@ -25,6 +25,8 @@ export default function Menu() {
         </Link>
         <Link href="/pricing">
           <li onClick={toggleMenu}>Pricing</li>
+          <li onClick={toggleMenu}>Pricing</li>
+
         </Link>
         <li className={style.other}>
           Important Links
