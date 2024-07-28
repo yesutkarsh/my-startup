@@ -49,8 +49,11 @@ export default function HandleUpload() {
   return (
     <>
       <div className={style.upload}>
+
         <form className={style.form}>
-          <input
+      <div className={style.dark}></div>
+        <div className={style.lable}>Upload You PDF (Only PDF)</div>
+          <input className="z-10"
             onChange={(e) => {
               pdfReceived(e.target.files[0]);
             }}
@@ -61,38 +64,41 @@ export default function HandleUpload() {
           />
         </form>
         <div className={style.options}>
-          <label htmlFor="">Select What To Print: </label>
+          <div className={style.dark}></div>
+          <div className={style.lable}>What To Print</div>
           <select
             onChange={(e) => setBinding(Number(e.target.value))}
           >
-            <option value={0}>Normal Print +₹0 (Simple Print Out)</option>
-            <option value={125}>PDF/Notes To Book (Book Binding) +₹125</option>
+            <option value={0}>Normal Print +₹0</option>
+            <option value={125}>PDF/Notes To Book +₹125</option>
             <option value={50}>Spiral Binding +₹50</option>
           </select>
+
+          <div className={style.lable}>Paper Size</div>
           <select
             onChange={(e) => setPaperSize(Number(e.target.value))}
           >
-            <option value={0}> Select Paper Size</option>
-            <option value={0}> 75gsm Paper Size A4 +₹0</option>
-            <option value={1}> 75gsm Paper Size A5 +₹1</option>
-            <option value={2}> 75gsm Paper Size B5 +₹2</option>
+            <option value={0}> 75gsm A4 +₹0</option>
+            <option value={1}> 75gsm A5 +₹1</option>
+            <option value={2}> 75gsm B5 +₹2</option>
           </select>
+          <div className={style.lable}>Color or B&W (Black and White)</div>
           <select
             onChange={(e) => setColor(Number(e.target.value))}
           >
-            <option value={0}>Select Color</option>
             <option value={3}>Color (Single Side) +₹3</option>
             <option value={2.5}>Color (Double Side) +₹2.5</option>
-            <option value={1.5}>Black And White (Single Side) +₹1.5</option>
-            <option value={1.2}>Black And White (Double Side) +₹1.2</option>
+            <option value={1.5}>B&W (Single Side) +₹1.5</option>
+            <option value={1.2}>B&W (Double Side) +₹1.2</option>
           </select>
         </div>
       </div>
       <div className={style.price}>
+        <div className={style.params}>
         <span> Per Page Cost: {base}</span>
         <span> Total Page: {noOfPage}</span>
-
         <span> Total Cost: {price}</span>
+        </div>
         <button>PAY & ORDER</button>
       </div>
     </>

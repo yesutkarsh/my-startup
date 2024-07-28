@@ -9,6 +9,7 @@ import SignUpCard from "../SignupCard/SignupCard";
 import Menu from "./Menu";
 import { toggleNav,toggleSignup } from "@/utils/slices/navSlice";
 import Link from "next/link";
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 
 export default function NavBar() {
@@ -30,7 +31,8 @@ export default function NavBar() {
   }
 
 
-
+  const { user, error, isLoading } = useUser();
+  if(user) console.log(user.given_name)
 
   
 
@@ -46,7 +48,8 @@ export default function NavBar() {
           </Link>
           </div>
           <div onClick={toggleIt} className={style.account}>
-          <span>{!stateOfSingup? "Account": "Close"}</span>
+          {user? <span>hi, {user.given_name}</span> :<span>{!stateOfSingup? "Account": "Close"}</span>}
+          
           <i  class="ri-user-smile-fill"></i>
           </div>
           

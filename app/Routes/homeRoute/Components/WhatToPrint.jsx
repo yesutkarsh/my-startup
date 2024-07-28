@@ -2,7 +2,7 @@ import React from "react";
 import style from "../../../css/WhatToPrint.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import a4 from "../../../../public/assets/a4.jpg";
+import a4 from "../../../../public/assets/paper.png";
 
 import notes from "../../../../public/assets/notes.png";
 

@@ -3,14 +3,25 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Provider } from "react-redux";
 import store from "@/utils/store";
-import AuthChange from "./AuthChange";
+// import AuthChange from "./AuthChange";
 import NavBar from "./components/Navbar/NavBar";
 import NextTopLoader from "nextjs-toploader";
+
+
+// auth0
+import { UserProvider } from '@auth0/nextjs-auth0/client';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 
+
+
 export default function RootLayout({ children }) {
+  
+
+  
+
   
   return (
 
@@ -30,8 +41,9 @@ export default function RootLayout({ children }) {
 
       </head>
 
+      <UserProvider>
       <body className={inter.className}>
-      <AuthChange/>
+
       <NavBar/>
       <NextTopLoader
       height={4}
@@ -41,6 +53,7 @@ export default function RootLayout({ children }) {
           children
         }
       </body>
+        </UserProvider>
     </html>
     </Provider>
 

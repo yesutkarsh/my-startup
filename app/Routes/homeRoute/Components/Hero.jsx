@@ -27,9 +27,9 @@ export default function Hero() {
     </div>
 
     <div className={style.services}>
-      <div>My Notes</div>
-      <div>Browse Notes</div>
-      <div>Upload Notes</div>
+      <div>My Notes <i class="ri-arrow-right-up-line"></i></div>
+      <div>Browse Notes <i class="ri-arrow-right-up-line"></i></div>
+      <div>Upload Notes <i class="ri-arrow-right-up-line"></i></div>
       <p>All activity performed like Notes You Download | Upload | Like | Push | Pull Down are publically visible.</p>
 
 

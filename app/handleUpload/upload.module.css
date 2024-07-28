@@ -1,59 +1,75 @@
-
-
-  .upload{
-    padding: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: auto;
-    min-width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.upload {
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  min-width: 300px;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  flex-direction: column;
 }
-.form{
-  background-color: whitesmoke;
-  height: 100px;
+.form .lable {
+  font-weight: 600;
+}
+.form {
+  position: relative;
+  /* background-color: rgb(19, 18, 19); */
   border-radius: 12px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: left;
+  padding: 20px;
+  gap: 10px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7FJNF1jqARO42dNbssfzmHHPeNRt-GAGXdg&s);
 }
-.form input::file-selector-button{
+.form input::file-selector-button {
   margin-left: 20px;
   border: none;
   background-color: rgb(41, 41, 41);
   color: aliceblue;
   padding: 10px;
   border-radius: 12px;
+  z-index: 10;
 }
 
-
-  .options{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    flex-wrap: wrap;
-    background-color: whitesmoke;
-    border-radius: 12px;
-    padding: 30px;
-    flex-direction: column;
+.options {
+  display: flex;
+  /* align-items: center; */
+  justify-content: left;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/620/81/253/pattern-design-dark-texture-wallpaper-preview.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  border-radius: 12px;
+  padding: 30px;
+  flex-direction: column;
+  position: relative;
 }
-.options select{
-    border: 1px solid rgba(0, 0, 0, 0.13);
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px;
-    outline: none;
+.options select {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  outline: none;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.904);
+  /* backdrop-filter: blur(20px);  */
+  color: rgb(0, 0, 0);
 }
 
-.price{
-  position: absolute;
+.price {
+  overflow: hidden;
+  position: fixed;
   bottom: 0;
-  background-color: whitesmoke;
+  width: 100%;
   height: 100px;
   width: 100%;
   padding: 20px;
@@ -61,15 +77,48 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-direction: column;
 }
-.price button{
-  border: 0.51PX solid rgba(0, 0, 0, 0.24);
+.price button {
+  border: 0.51px solid rgba(0, 0, 0, 0.24);
   background-color: black;
   color: white;
   padding: 15px;
   border-radius: 12px;
+  width: 100%;
 }
-.options select{
+.options select {
+  z-index: 10;
   border: 0.1px solid rgba(0, 0, 0, 0.062);
 }
+.params {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 10px;
+}
 
+.lable {
+  z-index: 10;
+  font-size: 20px;
+  font-weight: 700;
+}
+.dark {
+  border-radius: 12px;
+  top: 0;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.651);
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+}
+@media screen and (min-width: 600px) {
+  .params {
+    font-size: 20px;
+  }
+  .price {
+    bottom: 20px;
+  }
+}
