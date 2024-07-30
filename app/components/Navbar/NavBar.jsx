@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import {
   Navbar,
+  User,
 } from "@nextui-org/react";
 import style from "./nav.module.css"
 import {useDispatch, useSelector } from "react-redux";
@@ -32,7 +33,7 @@ export default function NavBar() {
 
 
   const { user, error, isLoading } = useUser();
-  if(user) console.log(user.given_name)
+  if(user) console.log(user)
 
   
 
@@ -48,7 +49,7 @@ export default function NavBar() {
           </Link>
           </div>
           <div onClick={toggleIt} className={style.account}>
-          {user? <span>hi, {user.given_name}</span> :<span>{!stateOfSingup? "Account": "Close"}</span>}
+          {user? <span>Profile</span> :<span>{!stateOfSingup? "Account": "Close"}</span>}
           
           <i  class="ri-user-smile-fill"></i>
           </div>

@@ -6,7 +6,7 @@ import { ref, uploadBytes } from "firebase/storage";
 import * as pdfjsLib from "pdfjs-dist/webpack";
 
 export default function HandleUpload() {
-  const [pdf, setPdf] = useState("");
+  const [pdf, setPdf] = useState(null);
 
   // Options
   const [color, setColor] = useState(0);
@@ -46,14 +46,82 @@ export default function HandleUpload() {
     }
   };
 
+ 
+
+
+
+  const fetchOrderID = async () => {
+    try {
+      const response = await fetch('/api/create-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ amount: price * 100 }) // amount in paise
+      });
+      const data = await response.json();
+      return data.id; // Razorpay returns the order ID as 'id'
+    } catch (error) {
+      console.error("Error fetching order ID:", error);
+    }
+  };
+
+
+  const handlePayment = async () => {
+
+    const order_id = await fetchOrderID();
+    if (!order_id) {
+      alert("Please Select Specification For Printing");
+      return;
+    }
+
+    const options = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY, // Ensure this is set in your environment variables
+      amount: price * 100, // amount in paise
+      currency: "INR",
+      name: "Notes Wallah",
+      description: "Document Printing",
+      image: "",
+      order_id,
+      handler: function (response) {
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature);
+        // Send response to the server to verify payment
+        verifyPayment(response);
+      },
+      prefill: {
+        name: "Gaurav Kumar",
+        email: "gaurav.kumar@example.com",
+        contact: "9000090000",
+      },
+      notes: {
+        address: "Razorpay Corporate Office"
+      },
+      theme: {
+        color: "#3399cc"
+      }
+    };
+
+    const rzp1 = new Razorpay(options);
+    rzp1.open();
+  };
+
+
+  const Pay = () => {
+      const rzp1 = new Razorpay(options);
+      // rzp1.on('payment.failed', handlePaymentFailure);
+      rzp1.open();
+  };
+
   return (
     <>
       <div className={style.upload}>
-
         <form className={style.form}>
-      <div className={style.dark}></div>
-        <div className={style.lable}>Upload You PDF (Only PDF)</div>
-          <input className="z-10"
+          <div className={style.dark}></div>
+          <div className={style.lable}>Upload Your PDF (Only PDF)</div>
+          <input
+            className="z-10"
             onChange={(e) => {
               pdfReceived(e.target.files[0]);
             }}
@@ -66,26 +134,24 @@ export default function HandleUpload() {
         <div className={style.options}>
           <div className={style.dark}></div>
           <div className={style.lable}>What To Print</div>
-          <select
-            onChange={(e) => setBinding(Number(e.target.value))}
-          >
+          <select onChange={(e) => setBinding(Number(e.target.value))}>
+          <option value={null}>Select</option>
             <option value={0}>Normal Print +₹0</option>
             <option value={125}>PDF/Notes To Book +₹125</option>
             <option value={50}>Spiral Binding +₹50</option>
           </select>
 
           <div className={style.lable}>Paper Size</div>
-          <select
-            onChange={(e) => setPaperSize(Number(e.target.value))}
-          >
+          <select onChange={(e) => setPaperSize(Number(e.target.value))}>
+          <option value={null}>Select</option>
             <option value={0}> 75gsm A4 +₹0</option>
             <option value={1}> 75gsm A5 +₹1</option>
             <option value={2}> 75gsm B5 +₹2</option>
           </select>
           <div className={style.lable}>Color or B&W (Black and White)</div>
-          <select
-            onChange={(e) => setColor(Number(e.target.value))}
-          >
+          <select onChange={(e) => setColor(Number(e.target.value))}>
+            <option value={null}>Select</option>
+            <option value={3}>Color (Single Side) +₹0</option>
             <option value={3}>Color (Single Side) +₹3</option>
             <option value={2.5}>Color (Double Side) +₹2.5</option>
             <option value={1.5}>B&W (Single Side) +₹1.5</option>
@@ -95,11 +161,11 @@ export default function HandleUpload() {
       </div>
       <div className={style.price}>
         <div className={style.params}>
-        <span> Per Page Cost: {base}</span>
-        <span> Total Page: {noOfPage}</span>
-        <span> Total Cost: {price}</span>
+          <span> Per Page Cost: {base}</span>
+          <span> Total Page: {noOfPage}</span>
+          <span> Total Cost: {price}</span>
         </div>
-        <button>PAY & ORDER</button>
+        <button onClick={handlePayment}>PAY & ORDER</button>
       </div>
     </>
   );

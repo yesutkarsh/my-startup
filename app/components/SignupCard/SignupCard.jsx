@@ -28,13 +28,13 @@ export default function SignUpCard() {
         <>
         {!user?
             
+            <a href="/api/auth/login">
           <button>
           
-            <i className="ri-google-fill"></i>
-            <a href="/api/auth/login">
-            Continue With Google
-            </a>
+          <i class="ri-user-3-fill"></i>
+            Continue With Account
           </button>
+            </a>
             :
           <div id={style.other} className="pt-5 flex gap-10">
             <a href="/api/auth/me">
