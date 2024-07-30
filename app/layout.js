@@ -4,6 +4,7 @@ import "./globals.css";
 import { Provider } from "react-redux";
 import store from "@/utils/store";
 // import AuthChange from "./AuthChange";
+import Script from 'next/script';
 import NavBar from "./components/Navbar/NavBar";
 import NextTopLoader from "nextjs-toploader";
 
@@ -38,17 +39,21 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playwrite+FR+Moderne:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
 
-      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-      </head>
+     
+        </head>
+      
       <UserProvider>
       <body className={inter.className}>
-
+      <Script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        strategy="beforeInteractive" // Ensures the script is loaded before user interaction
+        />
       <NavBar/>
       <NextTopLoader
       height={4}
       color="black"
       />
+    
         {
           children
         }

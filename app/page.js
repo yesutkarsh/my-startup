@@ -7,6 +7,7 @@ export default function page() {
 
   return (
     <>
+    {console.log(process.env.hello)}
     <HomePage/>
     </>
   )

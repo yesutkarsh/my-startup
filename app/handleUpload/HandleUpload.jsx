@@ -67,6 +67,8 @@ export default function HandleUpload() {
   };
 
 
+  {console.log(process.env.AUTH0_SECRET)}
+
   const handlePayment = async () => {
 
     const order_id = await fetchOrderID();
@@ -76,7 +78,7 @@ export default function HandleUpload() {
     }
 
     const options = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY, // Ensure this is set in your environment variables
+      // key: process.env.NEXT_PUBLIC_RAZORPAY_KEY, // Ensure this is set in your environment variables
       amount: price * 100, // amount in paise
       currency: "INR",
       name: "Notes Wallah",

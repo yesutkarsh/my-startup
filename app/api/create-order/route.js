@@ -6,7 +6,6 @@ const razorpay = new Razorpay({
   key_id:"rzp_live_sUnHNyxx20QkET",
   key_secret:"TeoDyeql81OvhmnYY8LLZeUN"
 });
-
 export async function POST(req) {
   const { amount } = await req.json();
 
